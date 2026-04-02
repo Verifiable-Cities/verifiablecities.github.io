@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verifiable Cities — DPI Pilot Programme</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --ink: #1a1a1a;
+  --body: #3d3d3d;
+  --muted: #6b6b6b;
+  --faint: #9a9a9a;
+  --rule: #d4d4d4;
+  --bg: #fefefe;
+  --accent: #3b7dd8;
+  --accent-light: #eef2f9;
+  --concept-1: #2554a0;
+  --concept-2: #1a6b4a;
+  --concept-3: #7c3a8c;
+  --concept-4: #b85c1f;
+  --concept-5: #1a6b4a;
+  --concept-6: #8c5a2a;
+  --serif: 'Source Serif 4', Georgia, serif;
+  --sans: 'DM Sans', -apple-system, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--sans);
+  color: var(--body);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 60px 40px;
+}
+
+/* HEADER */
+.header {
+  margin-bottom: 56px;
+  position: relative;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.header-logo {
+  width: 150px;
+  height: auto;
+  opacity: 0.9;
+  flex-shrink: 0;
+  margin-top: 0;
+}
+
+.header-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+
+.header h1 {
+  font-family: var(--serif);
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.15;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.header-intro {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--body);
+  margin-bottom: 16px;
+}
+
+.header-org {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--muted);
+  padding-top: 16px;
+  border-top: 1px solid var(--rule);
+}
+
+/* SECTION DIVIDERS */
+.section-rule {
+  height: 3px;
+  background: var(--accent);
+  border: none;
+  margin: 48px 0 32px 0;
+}
+
+.thin-rule {
+  height: 1px;
+  background: var(--rule);
+  border: none;
+  margin: 40px 0 32px 0;
+}
+
+/* PROGRAMME SECTION */
+.programme-title {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.programme-intro {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--body);
+  margin-bottom: 32px;
+  max-width: 680px;
+}
+
+/* SUPPORT GRID */
+.support-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px 40px;
+  margin-bottom: 16px;
+}
+
+.support-item h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.support-item p {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* WHAT WE NEED */
+.need-title {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 20px;
+}
+
+.need-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 8px;
+}
+
+.need-item {
+  padding: 20px 0;
+  border-top: 2px solid var(--ink);
+}
+
+.need-item h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.need-item p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.need-item--accent {
+  border-top: 2px solid var(--accent);
+}
+
+.need-item--accent h3 {
+  color: var(--accent);
+}
+
+.need-item--accent p {
+  color: var(--accent);
+}
+
+.need-item--accent a {
+  color: var(--accent);
+}
+
+.need-cta {
+  font-size: 13.5px;
+  color: var(--accent);
+  font-weight: 600;
+  margin-top: 16px;
+}
+
+.need-cta a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* PILOT CONCEPTS HEADER */
+.concepts-header {
+  margin-bottom: 12px;
+}
+
+.concepts-title {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+
+.concepts-intro {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--body);
+  max-width: 700px;
+  margin-bottom: 40px;
+}
+
+/* CONCEPT CARDS */
+.concept {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.concept:last-child {
+  border-bottom: none;
+}
+
+.concept-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  cursor: pointer;
+  user-select: none;
+  gap: 24px;
+}
+
+.concept-toggle:hover .concept-title {
+  color: var(--accent);
+}
+
+.concept-toggle-left {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  flex: 0 0 280px;
+  text-align: left;
+}
+
+.concept-toggle-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.concept-number {
+  font-family: var(--serif);
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.concept-title {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  transition: color 0.2s ease;
+  text-align: left;
+}
+
+.concept-chevron {
+  width: 20px;
+  height: 20px;
+  color: var(--faint);
+  transition: transform 0.25s ease, color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.concept.is-open .concept-chevron {
+  transform: rotate(180deg);
+  color: var(--accent);
+}
+
+.concept-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.concept-tag {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 4px 10px;
+  border-radius: 3px;
+  background: #f2f2f0;
+  color: var(--muted);
+}
+
+.concept-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 40px;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
+  padding-bottom: 0;
+}
+
+.concept.is-open .concept-body {
+  max-height: 3000px;
+  opacity: 1;
+  padding-bottom: 32px;
+}
+
+.concept-section {
+  margin-bottom: 12px;
+}
+
+.concept-section-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin-bottom: 8px;
+}
+
+.concept-section p {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--body);
+}
+
+.concept-example {
+  grid-column: 1 / -1;
+}
+
+.concept-example p {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--accent);
+}
+
+.concept-needs {
+  grid-column: 1 / -1;
+  margin-top: 12px;
+  padding: 16px 20px;
+  background: var(--accent-light);
+  border-radius: 6px;
+}
+
+.concept-needs-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.concept-needs ul {
+  list-style: none;
+  padding: 0;
+}
+
+.concept-needs li {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--body);
+  padding: 3px 0 3px 16px;
+  position: relative;
+}
+
+.concept-needs li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.4;
+}
+
+.also-applies {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* CTA */
+.cta-block {
+  padding: 32px;
+  background: var(--accent-light);
+  border-radius: 8px;
+  border-left: 4px solid var(--accent);
+  margin-top: 20px;
+}
+
+.cta-block h3 {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+
+.cta-block p {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--body);
+  margin-bottom: 12px;
+}
+
+.cta-block .contact {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* FOOTER */
+.footer {
+  margin-top: 56px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
+  font-size: 12px;
+  color: var(--faint);
+}
+
+@media print {
+  .page { padding: 20px; }
+  .concept { page-break-inside: avoid; }
+}
+
+/* ── EXPLORE BUTTON ROW ── */
+.explore-row {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0 24px;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 8px;
+}
+.explore-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 28px;
+  background: var(--ink);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.18s, transform 0.15s;
+}
+.explore-btn:hover { background: var(--accent); transform: translateY(-1px); }
+.explore-btn:disabled { background: #e8e8e6; color: var(--faint); cursor: default; transform: none; }
+.explore-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+.coming-soon-note { font-size: 12px; color: var(--faint); font-style: italic; }
+
+/* ── CONCEPT TAGLINE ── */
+.concept-tagline {
+  display: block;
+  font-size: 12px;
+  font-style: italic;
+  color: var(--muted);
+  margin-top: 3px;
+  font-weight: 400;
+  min-height: 1em;
+}
+
+/* ── OVERLAY ── */
+.overlay {
+  position: fixed; inset: 0; z-index: 1000;
+  display: flex; flex-direction: column;
+  background: white;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.28s ease;
+}
+.overlay.is-visible { opacity: 1; pointer-events: all; }
+.overlay-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 24px; background: white; border-bottom: 1px solid var(--rule);
+  flex-shrink: 0; gap: 16px; min-height: 56px;
+}
+.overlay-title-group { display: flex; align-items: baseline; gap: 12px; min-width: 0; flex-shrink: 1; }
+.overlay-num { font-family: var(--serif); font-size: 22px; font-weight: 300; flex-shrink: 0; }
+.overlay-title {
+  font-family: var(--serif); font-size: 19px; font-weight: 600; color: var(--ink);
+  letter-spacing: -0.01em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.overlay-tags { display: flex; gap: 6px; flex-wrap: nowrap; overflow: hidden; flex-shrink: 1; }
+.overlay-tag {
+  font-size: 10px; font-weight: 600; letter-spacing: 0.04em; padding: 3px 9px;
+  border-radius: 3px; background: #f2f2f0; color: var(--muted); white-space: nowrap;
+}
+.overlay-close {
+  display: flex; align-items: center; gap: 7px;
+  padding: 9px 18px; background: white; border: 1.5px solid var(--rule);
+  border-radius: 6px; font-family: var(--sans); font-size: 13px; font-weight: 600;
+  color: var(--ink); cursor: pointer; flex-shrink: 0;
+  transition: border-color 0.15s, background 0.15s; white-space: nowrap;
+}
+.overlay-close:hover { border-color: var(--ink); background: #f5f5f5; }
+.overlay-close svg { width: 14px; height: 14px; }
+.overlay-frame { flex: 1; width: 100%; border: none; display: block; background: #f6f4f0; }
+
+@media (max-width: 700px) {
+  .overlay-tags { display: none; }
+  .overlay-title { font-size: 16px; }
+  .concept-toggle-right .concept-tags { display: none; }
+}
+@media (max-width: 480px) {
+  .overlay-close span { display: none; }
+  .overlay-close { padding: 8px 10px; }
+}
+</style>
+</head>
+<body>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay" role="dialog" aria-modal="true">
+  <div class="overlay-header">
+    <div class="overlay-title-group">
+      <span class="overlay-num" id="overlay-num"></span>
+      <span class="overlay-title" id="overlay-title"></span>
+    </div>
+    <div class="overlay-tags" id="overlay-tags"></div>
+    <button class="overlay-close" id="overlay-close-btn">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="3" x2="13" y2="13"/>
+        <line x1="13" y1="3" x2="3" y2="13"/>
+      </svg>
+      <span>Exit</span>
+    </button>
+  </div>
+  <iframe class="overlay-frame" id="overlay-iframe" src="" title="Concept interactive demo"></iframe>
+</div>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-top">
+      <div>
+        <div class="header-label">Verifiable Cities</div>
+        <h1>Digital Public Infrastructure<br>for Municipal Innovation</h1>
+      </div>
+      <img class="header-logo" src="data:image/png;base64,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" alt="Ethereum Foundation">
+    </div>
+    <p class="header-intro">Verifiable Cities is an <a href="https://www.usecaselab.org/verifiable-cities/use-case-landscape/">applied research initiative</a> exploring how open digital infrastructure can improve coordination, resource allocation, and trust in digitized operations and public service delivery. Over the past several months, we’ve worked with municipal governments, city innovation labs, and civic technology organizations to identify opportunities to strengthen state and civic capacity through transparent digital systems. These discussions, spanning North America, Europe, and Asia-Pacific, surfaced a set of common pain points and opportunities. The concepts that follow synthesize these insights into six areas of focus.</p>
+    <br>
+    <p class="header-org">An initiative of the Ethereum Foundation, a nonprofit that develops open-source cryptographic infrastructure used by communities, governments, financial institutions, and enterprises worldwide.</p>
+  </div>
+
+  <!-- PILOT PROGRAMME -->
+  <hr class="section-rule">
+  <h2 class="programme-title">Digital Public Infrastructure Pilot Programme</h2>
+  <p class="programme-intro">Open to city governments and teams across the broader civic and public interest ecosystem, the DPI Pilot Programme will select up to five project teams in Summer 2026. Projects may build on the areas outlined below or propose a new pilot concept. The Verifiable Cities initiative will work directly alongside selected teams to provide the following support:</p>
+
+  <div class="support-grid">
+    <div class="support-item">
+      <h3>Engineering Capacity</h3>
+      <p>Full technical support will be available to co-design and scope, architect, and build pilots. Bespoke support, such as funding, can also be explored on a case-by-case basis, with opportunities for follow-on support. No financial committment is required from selected teams.</p>
+    </div>
+    <div class="support-item">
+      <h3>Open-Source Commitment</h3>
+      <p>Pilot outputs are expected to be open-source where possible. Development of a pilot does not require any procurement obligations or expansion and integration of pilots post-completion. Documentation support of pilot learnings for public and internal use will also be provided.</p>
+    </div>
+    <div class="support-item">
+      <h3>Designed for Real Users</h3>
+      <p>The underlying technology will be abstracted where possible for simple and practical user interfaces. All outputs will be developed with end users in mind, whether residents, city staff, or vendors.</p>
+    </div>
+    <div class="support-item">
+      <h3>Global Innovation Network</h3>
+      <p>Pilot teams join a cohort of leading initatives tackling similar challenges, with opportunities to showcase results, shape emerging digital public infrastructure best practices, and exchange insights.</p>
+    </div>
+  </div>
+
+  <!-- WHAT WE NEED -->
+  <hr class="thin-rule">
+  <h2 class="need-title">What We Need From You</h2>
+  <div class="need-grid">
+    <div class="need-item">
+      <h3>A Champion Department or Team</h3>
+      <p>Each pilot requires a named project team, agency or department willing to engage operationally during the agreed upon timeline.</p>
+    </div>
+    <div class="need-item">
+      <h3>Real Pain Points</h3>
+      <p>Teams must have a specific pain point/opportunity they would like to explore. Pilots can be existing, new or co-designed with the Verifiable Cities team as part of the selection process.</p>
+    </div>
+    <div class="need-item need-item--accent">
+      <h3>Next Steps</h3>
+      <p> If you have questions, an existing project, or an idea not reflected in the concepts below, we encourage you to get in touch over <a href="/cdn-cgi/l/email-protection#a8dddbcdcbc9dbcdc4c9cae8cddcc0cddacdddc586c7dacf">email</a> or <a href="https://cal.com/rithikha-rajamohan/verifiablecities">schedule a call</a>.</p>
+    </div>
+
+  </div>
+
+  <!-- PILOT CONCEPTS -->
+  <hr class="section-rule">
+  <div class="concepts-header">
+    <h2 class="concepts-title">Pilot Concepts</h2>
+    <p class="concepts-intro">The following six concepts represent the strongest patterns from our conversations with cities and municipal innovation initiatives. Each addresses a different challenge applicable across municipal processes and systems, from climate resilience to housing. 
+    <br>
+    <br>
+    <b>Concepts can be considered individually or combined</b>: for example, Programmable Policy (Concept #1) and Privacy-Preserving Digital IDs (Concept #3) together enable an automated policy flow where deliberative input from verified residents is embedded directly into the system's logic. Combining these two concepts addresses a gap frequently described by cities and related actors where participatory processes run separately from the policies and programs they're meant to shape.</p>
+  </div>
+
+
+  <div class="concept">
+    <div class="concept-toggle">
+      <div class="concept-toggle-left">
+        <span class="concept-number" style="color: var(--concept-1);">1</span>
+        <div>
+          <span class="concept-title">Programmable Policy</span>
+          <span class="concept-tagline">Making policy logic explicit, testable, and explainable</span>
+        </div>
+      </div>
+      <div class="concept-toggle-right">
+        <div class="concept-tags">
+          <span class="concept-tag">Policy & Operations</span>
+          <span class="concept-tag">Data-Driven Systems</span>
+          <span class="concept-tag">Resident Input</span>
+        </div>
+        <svg class="concept-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 8 10 13 15 8"/></svg>
+      </div>
+    </div>
+    <div class="concept-body">
+      <div class="explore-row">
+        <button class="explore-btn" id="explore-1">
+          <svg viewBox="0 0 14 14" fill="currentColor"><polygon points="2,1 13,7 2,13"/></svg>
+          Explore this concept
+        </button>
+      </div>
+      <div class="concept-needs">
+        <div class="concept-needs-label">What We’ll Need</div>
+        <ul>
+          <li>An existing policy or programme with clearly defined trigger conditions and responses.</li>
+          <li>An available real-time or structured data source that corresponds to the trigger condition.</li>
+          <li>A named department or operational team with ownership of the relevant policy or programme workflow.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="concept">
+    <div class="concept-toggle">
+      <div class="concept-toggle-left">
+        <span class="concept-number" style="color: var(--concept-2);">2</span>
+        <div>
+          <span class="concept-title">Outcomes-Based Vendor Contracts</span>
+          <span class="concept-tagline"></span>
+        </div>
+      </div>
+      <div class="concept-toggle-right">
+        <div class="concept-tags">
+          <span class="concept-tag">Compliance</span>
+          <span class="concept-tag">Public Spending</span>
+          <span class="concept-tag">Vendor Management</span>
+        </div>
+        <svg class="concept-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 8 10 13 15 8"/></svg>
+      </div>
+    </div>
+    <div class="concept-body">
+      <div class="explore-row">
+        <button class="explore-btn" disabled>
+          <svg viewBox="0 0 14 14" fill="currentColor"><polygon points="2,1 13,7 2,13"/></svg>
+          Explore this concept
+        </button>
+        <span class="coming-soon-note">Interactive demo coming soon</span>
+      </div>
+
+      <div class="concept-section">
+        <div class="concept-section-label">The Problem</div>
+        <p>Cities are increasingly tying vendor payment to measurable outcomes and performance metrics to strengthen accountability for public spending. However, this approach introduces significant compliance burdens on city staff who must now collect evidence, reconcile milestones against documentation, prepare approval packages, chase incomplete or incorrect submissions, and route multiple payment deliveries over the course of a contract. This delays payments to vendors who have already delivered, discourages smaller providers from applying to performance-based contracts due to the uncertainty and delays in receiving payment, and requires extra staff time and compliance effort.</p>
+      </div>
+      <div class="concept-section">
+        <div class="concept-section-label">The Approach</div>
+        <p>Contract milestones and financial conditions are first encoded as measurable checks against vendor-submitted data. If these checks pass, they unlock milestone-based payment to the provider for delivery of services. When documentation is submitted, the system validates it against contract-defined criteria and either routes payment for authorisation or flags gaps for human review. The provider's outcome data is verified against contract-defined metrics automatically: a milestone met triggers payment authorisation, a milestone missed triggers review, and the full attestation chain is audit-ready.</p>
+      </div>
+      <div class="concept-section concept-example">
+        <div class="concept-section-label">Example</div>
+        <p>Denver spent $274M on homelessness services over four years, but found that some providers were achieving permanent housing outcomes for as few as 2–4% of clients exiting their programmes. The city has since moved away from flat-fee contracts toward performance-based models, paying providers for specific outcomes like housing retention and reduced jail days. With programmable compliance, every submission, verification, and payment action is time-stamped and logged, creating a transparent, publicly inspectable record that the city, the vendor themselves, and the public can independently verify and track over time.</p>
+      </div>
+      <div class="concept-needs">
+        <div class="concept-needs-label">What We’ll Need</div>
+        <ul>
+          <li>An existing or planned performance-based vendor contract with defined milestones or outcome metrics.</li>
+          <li>Documentation or description of the current verification and payment authorisation process.</li>
+          <li>A named team with ownership of procurement, contract management, or vendor compliance.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="concept">
+    <div class="concept-toggle">
+      <div class="concept-toggle-left">
+        <span class="concept-number" style="color: var(--concept-3);">3</span>
+        <div>
+          <span class="concept-title">Privacy-Preserving Digital IDs</span>
+          <span class="concept-tagline"></span>
+        </div>
+      </div>
+      <div class="concept-toggle-right">
+        <div class="concept-tags">
+          <span class="concept-tag">Cybersecurity</span>
+          <span class="concept-tag">Resident Services</span>
+          <span class="concept-tag">Digital Identity</span>
+        </div>
+        <svg class="concept-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 8 10 13 15 8"/></svg>
+      </div>
+    </div>
+    <div class="concept-body">
+      <div class="explore-row">
+        <button class="explore-btn" disabled>
+          <svg viewBox="0 0 14 14" fill="currentColor"><polygon points="2,1 13,7 2,13"/></svg>
+          Explore this concept
+        </button>
+        <span class="coming-soon-note">Interactive demo coming soon</span>
+      </div>
+
+      <div class="concept-section">
+        <div class="concept-section-label">The Problem</div>
+        <p>Every interaction between a resident and their city requires proving something such as residency, eligibility, enrolment status, age, address, qualifications, etc. Today, proving any one of these facts means over-sharing: handing over a full document that contains far more personal information than the interaction requires, and repeating the same process with every department, programme and service. The city must also spend time and develop processes to collect and store this data and perform the relevant checks, along with the legal burden and data protection obligations that come with it. The result is friction for residents, liability for the city, and a growing attack surface as AI-generated synthetic identities and deepfake documents become harder to detect and much more ubiquitous.</p>
+      </div>
+      <div class="concept-section">
+        <div class="concept-section-label">The Approach</div>
+        <p>A simple city-issued digital credential that verifies specific facts about a resident: "lives in this jurisdiction," "is over 18," "is enrolled in programme X/Y/Z", without revealing any information beyond what is needed for that specific interaction. The resident experience will remain familiar: sign up once through a standard city portal, verify identity through existing processes, and from that point forward, every city service can confirm what it needs to know without collecting data on what it doesn't need to know. The underlying cryptography (zero-knowledge proofs) enables selective disclosure, the ability to prove a fact without exposing the data behind it to make data minimisation enforced at the technical level rather than just a policy goal.</p>
+      </div>
+      <div class="concept-section concept-example">
+        <div class="concept-section-label">Example</div>
+        <p>If a resident applies for a district bus pass requiring proof of residency, then the system verifies "this person is a resident of this district" (verification) without the transit office ever seeing their full address (privacy preservation), and the verification result is logged instead of recording the personal data collected (compliance). <span class="also-applies">This concept also applies to benefits eligibility across departments, age-gated service access, civic voting and participation verification, programme enrolment confirmation, and cross-jurisdictional service portability.</span></p>
+      </div>
+      <div class="concept-needs">
+        <div class="concept-needs-label">What We’ll Need</div>
+        <ul>
+          <li>A service or set of services where residents currently provide identity documents to access benefits or programmes.</li>
+          <li>Clarity on what specific facts each service needs to confirm versus what it currently collects.</li>
+          <li>A named department with ownership of at least one resident-facing verification or eligibility process.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="concept">
+    <div class="concept-toggle">
+      <div class="concept-toggle-left">
+        <span class="concept-number" style="color: var(--concept-4);">4</span>
+        <div>
+          <span class="concept-title">Cross-Agency Data Sharing</span>
+          <span class="concept-tagline"></span>
+        </div>
+      </div>
+      <div class="concept-toggle-right">
+        <div class="concept-tags">
+          <span class="concept-tag">Privacy-Preserving Verification</span>
+          <span class="concept-tag">Resident Access</span>
+        </div>
+        <svg class="concept-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 8 10 13 15 8"/></svg>
+      </div>
+    </div>
+    <div class="concept-body">
+      <div class="explore-row">
+        <button class="explore-btn" disabled>
+          <svg viewBox="0 0 14 14" fill="currentColor"><polygon points="2,1 13,7 2,13"/></svg>
+          Explore this concept
+        </button>
+        <span class="coming-soon-note">Interactive demo coming soon</span>
+      </div>
+
+      <div class="concept-section">
+        <div class="concept-section-label">The Problem</div>
+        <p>City departments hold critical information about residents pertaining to health, housing, income, benefits, education, etc, but this data is siloed across agencies with different systems and legal frameworks created to prevent the creation of centralized databases due to privacy concerns. Because of these precautions, data sharing agreements can take months or years to negotiate, often for a single data element, and residents need to re-prove identity and eligibility from scratch with every agency and programme. Many give up the process of accessing support and oftentimes the people who need the most help bear the heaviest documentation burden.</p>
+      </div>
+      <div class="concept-section">
+        <div class="concept-section-label">The Approach</div>
+        <p>Zero-knowledge cryptography allows one agency to verify a specific fact from another's records, such as whether someone's income is below a threshold, without either agency seeing the underlying data. A proof is generated that proves a certain fact, however the raw data never has to leave an organization's database. As a result, no data sharing agreements are required because no data is ever shared. Combined with a portable, resident-held credential (see Digital ID pilot concept), a person can verify eligibility once and carry that status across every agency they interact with.</p>
+      </div>
+      <div class="concept-section concept-example">
+        <div class="concept-section-label">Example</div>
+        <p>A single parent working two jobs qualifies for reduced-rate transit, subsidised childcare, and rental assistance. Today, they take time off work to visit three separate offices, fill out three separate applications, and provide the same proof of income documents to three separate intake workers, each of whom enters the information into a different system. The process takes weeks and requires multiple follow-up visits. With a portable verified credential, the parent proves income eligibility once at the first office. At the second and third, they present the credential and the system confirms eligibility instantly without the agency ever seeing their pay stubs, tax returns, or employer details. No data leaves any database. No data sharing agreement is needed. The parent accesses all three programmes in a single week instead of three months. <span class="also-applies">This concept also applies to benefits navigation, refugee and newcomer coordination, cross-departmental case management, and multi-provider coordination for vulnerable populations.</span></p>
+      </div>
+      <div class="concept-needs">
+        <div class="concept-needs-label">What We’ll Need</div>
+        <ul>
+          <li>Two or more departments or service providers that serve overlapping residents but operate with separate data systems.</li>
+          <li>Identification of specific eligibility or verification checks that are currently repeated across those providers.</li>
+          <li>A named team with ownership of intake or case management across at least one of the relevant services.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="concept">
+    <div class="concept-toggle">
+      <div class="concept-toggle-left">
+        <span class="concept-number" style="color: var(--concept-5);">5</span>
+        <div>
+          <span class="concept-title">Verifiable Permits, Licences & Certifications</span>
+          <span class="concept-tagline"></span>
+        </div>
+      </div>
+      <div class="concept-toggle-right">
+        <div class="concept-tags">
+          <span class="concept-tag">Credentialing</span>
+          <span class="concept-tag">Cross-Jurisdiction</span>
+          <span class="concept-tag">Public Trust</span>
+        </div>
+        <svg class="concept-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 8 10 13 15 8"/></svg>
+      </div>
+    </div>
+    <div class="concept-body">
+      <div class="explore-row">
+        <button class="explore-btn" disabled>
+          <svg viewBox="0 0 14 14" fill="currentColor"><polygon points="2,1 13,7 2,13"/></svg>
+          Explore this concept
+        </button>
+        <span class="coming-soon-note">Interactive demo coming soon</span>
+      </div>
+
+      <div class="concept-section">
+        <div class="concept-section-label">The Problem</div>
+        <p>Cities issue thousands of permits, licences, and certifications every year in the form of paper documents or entries in local databases. These formats make it difficult to verify documents outside the issuing body, requiring manual contact to confirm authenticity.</p>
+      </div>
+      <div class="concept-section">
+        <div class="concept-section-label">The Approach</div>
+        <p>Every permit, licence, or certification issued by a city becomes a verifiable digital credential. Anyone, whether another department, jurisdiction, or member of the public, can verify authenticity instantly without contacting the issuing body. Revocation or expiry invalidates all copies simultaneously. Privacy-preserving cryptography ensures that no personal data can be extracted from the verification process, only the relevant fact ("this credential is valid") is confirmed.</p>
+      </div>
+      <div class="concept-section concept-example">
+        <div class="concept-section-label">Example</div>
+        <p>A family moves to a new district and needs to enrol their child in a new school. Today this means manually requesting and transferring transcripts and proof of enrolment from the previous school. With verifiable credentials, the parent carries digital records issued by the previous school that the new school can verify instantly and independently. <span class="also-applies">This concept also applies to health inspection certificates, building and occupancy permits, professional and trade licences, and vendor qualification certifications.</span></p>
+      </div>
+      <div class="concept-needs">
+        <div class="concept-needs-label">What We’ll Need</div>
+        <ul>
+          <li>A permit, licence, or certification currently issued by the city in paper or digital form.</li>
+          <li>An understanding of how that credential is currently verified by external parties.</li>
+          <li>A named department with ownership of the issuance process for the relevant credential type.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="concept">
+    <div class="concept-toggle">
+      <div class="concept-toggle-left">
+        <span class="concept-number" style="color: var(--concept-6);">6</span>
+        <div>
+          <span class="concept-title">Public Works Investment</span>
+          <span class="concept-tagline"></span>
+        </div>
+      </div>
+      <div class="concept-toggle-right">
+        <div class="concept-tags">
+          <span class="concept-tag">Public Works</span>
+          <span class="concept-tag">Municipal Finance</span>
+          <span class="concept-tag">Open Source City</span>
+        </div>
+        <svg class="concept-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 8 10 13 15 8"/></svg>
+      </div>
+    </div>
+    <div class="concept-body">
+      <div class="explore-row">
+        <button class="explore-btn" disabled>
+          <svg viewBox="0 0 14 14" fill="currentColor"><polygon points="2,1 13,7 2,13"/></svg>
+          Explore this concept
+        </button>
+        <span class="coming-soon-note">Interactive demo coming soon</span>
+      </div>
+
+      <div class="concept-section">
+        <div class="concept-section-label">The Problem</div>
+        <p>Investment and maintenance of public infrastructure like parks, libraries and urban green canopy is funded through municipal budgets that are increasingly constrained and often the first line item cut. When cities contract maintenance out, coverage is frequently incomplete with contractors not servicing every neighbourhood equally or leaving work unfinished. Residents who derive direct value from these assets have no mechanism to invest in their upkeep, and those who already informally maintain public spaces have no official framework to coordinate within or be compensated for that contribution.</p>
+      </div>
+      <div class="concept-section">
+        <div class="concept-section-label">The Approach</div>
+        <p>A democratized investment mechanism and maintenance scheme, structured as a sidecar alongside existing municipal financing avenues, that allows residents and local businesses to directly fund specific local infrastructure. Returns can be structured through well known avenues like carbon credits or usage-based revenue. Residents can take on upkeep work that the city cannot afford to contract or that contractors are not covering, with visible coordination of contributions, asset condition, and work needed.</p>
+      </div>
+      <div class="concept-section concept-example">
+        <div class="concept-section-label">Example</div>
+        <p>A city identifies a neighbourhood park where the maintenance contract covers structural repairs and routine seasonal upkeep. A community infrastructure bond for the park. A local café owner invests $500, a group of residents each put in $50, and a nearby business contributes $2,000. The bond funds a seasonal maintenance programme and generates returns for investors through carbon credits from the park's tree canopy. A retired resident who already mows the grass and trims hedges every week registers as a community maintainer, logs their work through the platform, and receives compensation from the fund which also received 3% of park revenue from the cafe and street vendor permit sales. The park's condition, fund balance, maintenance schedule, and contributor activity are all publicly visible and auditable.</p>
+      </div>
+      <div class="concept-needs">
+        <div class="concept-needs-label">What We’ll Need</div>
+        <ul>
+          <li>A public asset or set of assets where maintenance is underfunded or contractor coverage is incomplete.</li>
+          <li>An understanding of existing community-led maintenance activity, whether formal or informal.</li>
+          <li>Insight into existing revenue streams attached to or generated by the asset.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <h3>Interested in exploring these concepts for your city or new ideas?</h3>
+    <p>Reach out at <a href="mailto:hello@verifiablecities.org">hello@verifiablecities.org</a> or <a href="https://cal.com/rithikha-rajamohan/verifiablecities">schedule a call</a></p>
+  </div>
+
+  <div class="footer">
+    Verifiable Cities · An initiative of the Ethereum Foundation Use Case Lab · March 2026
+  </div>
+
+</div>
+
+<script>
+document.querySelectorAll('.concept-toggle').forEach(function(toggle) {
+  toggle.addEventListener('click', function() {
+    var concept = toggle.closest('.concept');
+    var isOpen = concept.classList.contains('is-open');
+    document.querySelectorAll('.concept.is-open').forEach(function(c) {
+      c.classList.remove('is-open');
+    });
+    if (!isOpen) concept.classList.add('is-open');
+  });
+});
+
+var overlay = document.getElementById('overlay');
+var iframe  = document.getElementById('overlay-iframe');
+
+function openOverlay(num, title, tags, src) {
+  document.getElementById('overlay-num').textContent = num;
+  document.getElementById('overlay-title').textContent = title;
+  document.getElementById('overlay-num').style.color =
+    getComputedStyle(document.documentElement).getPropertyValue('--concept-' + num).trim();
+  document.getElementById('overlay-tags').innerHTML =
+    tags.map(function(t) { return '<span class="overlay-tag">' + t + '</span>'; }).join('');
+  iframe.src = src;
+  overlay.classList.add('is-visible');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeOverlay() {
+  overlay.classList.remove('is-visible');
+  document.body.style.overflow = '';
+  setTimeout(function() { iframe.src = ''; }, 300);
+}
+
+document.getElementById('overlay-close-btn').addEventListener('click', closeOverlay);
+
+document.getElementById('explore-1').addEventListener('click', function(e) {
+  e.stopPropagation();
+  openOverlay('1', 'Programmable Policy',
+    ['Policy & Operations', 'Data-Driven Systems', 'Resident Input'],
+    'patterns/programmable-policy-interactive.html');
+});
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape' && overlay.classList.contains('is-visible')) closeOverlay();
+});
+</script>
+</body>
+</html>
